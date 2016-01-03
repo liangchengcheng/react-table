@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="react.min.js"></script>
+    <script src="JSXTransformer.js"></script>
+    <script type="text/jsx">
+        var MyForm=React.createClass({
+            submitHandler:function(event){
+                event.preventDefault();
+                var helloTo=React.findDOMNode(this.refs.helloTo).value;
+                alert(helloTo);
+            },
+            render:function(){
+                return <form onSubmit={this.submitHandler}>
+                    <input ref="helloTo" type="text" defaultValue="Hello World!" />
+                    <br />
+                    <button type="submit">读取</button>
+                </form>
+            }
+        });
+        React.render(<MyForm></MyForm>,document.body);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
